@@ -1,7 +1,7 @@
 #Stage 0, based on Node.js, to build and compile Angular
 FROM node:10-alpine as node
- 
-WORKIR /app
+
+WORKDIR /app
  
 COPY package*.json /app/
  
