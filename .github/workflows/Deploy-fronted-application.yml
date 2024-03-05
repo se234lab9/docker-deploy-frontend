@@ -31,7 +31,7 @@ jobs:
             with:
               context: .
               push: true
-              tags: kamoface/234-deploylab-frontend:latest
+              tags: haoxuanyu/234-deploylab-frontend:latest
           -
             name: copy file via ssh password
             uses: appleboy/scp-action@v0.1.4
