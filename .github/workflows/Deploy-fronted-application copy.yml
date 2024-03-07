@@ -1,7 +1,7 @@
 'on':
   push:
     branches:
-      - main
+      - NewBranch
 jobs:
     docker:
         runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
               username: ${{ secrets.HOST_USER_NAME }}
               key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
               port: 22
-              source: "docker-compose.yml" 
+              source: "docker-compose-prod.yml" 
               target: "/home/ubuntu/frontend"
           -
             name: docker compose
@@ -56,4 +56,5 @@ jobs:
                 docker compose down
                 docker compose pull
                 docker compose up -d
+                docker-compose  -f docker-compose-prod.yml up -d
                 rm -rf /home/ubuntu/frontend
